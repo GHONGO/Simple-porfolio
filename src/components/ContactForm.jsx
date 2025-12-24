@@ -49,7 +49,7 @@ export default function ContactForm() {
             />
 
             {/* 4. Formspree Redirect (Optional: Redirects user back to contact page after sending) */}
-            <input type="hidden" name="_next" value="https://pattin-portfolio.vercel.app/contact" />
+            <input type="hidden" name="_next" value="https://griffin-hongo.vercel.app/contact" />
             
             {/* 5. Subject Line (Optional: Makes your email inbox look cleaner) */}
             <input type="hidden" name="_subject" value="New submission from Portfolio!" />
