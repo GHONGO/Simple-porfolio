@@ -6,36 +6,36 @@ import heavenly from '../assets/heavenly.webp';
 const projects = [
     {
         id: 1,
-        title: 'JobHunt - Job board',
-        summary: 'Full stack job listing platform with auth & profiles (demo).',
-        tech: ['React', 'Node', 'MongoDB'],
-        link: '#',
-        image: jobhunt
+        title: 'Waste Map',
+        summary: 'WasteMap is a full-stack web application that empowers communities and municipalities to manage waste efficiently. Citizens can report waste issues with photos and GPS locations, while municipal authorities can assign cleanup teams, optimize routes, and monitor cleanup performance in real time.',
+        tech: ['React', 'Express', 'MongoDB'],
+        link: 'https://wastemap.netlify.app/',
+        image: Wastemap
     },
     {
         id: 2,
-        title: 'React Portfolio ',
-        summary: 'My personal portfolio showcasing projects & contact.',
-        tech: ['React', 'Tailwind'],
-        link: 'pattin-portfolio.vercel.app',
-        image: portfolio
+        title: 'Dr.Kennedy Hongo Foundation',
+        summary: 'This is a non-profit organization aimed at Providing African Solutions to African Challenges (PASTAC), through Leadership, Education & Legislation. And Promoting STARNORMICS and the Making of STARNORMS and, the promotion of fairness and justice.',
+        tech: ['Wordpress'],
+        link: 'https://drkennedyhongofoundation.org/',
+        image: Dr.kennedyfoundation
     },
     {
         id: 3,
-        title: 'Cinema plus+',
-        summary: 'Cinema Plus+ is aFull stack project with a modern, responsive platform for showcasing events and enabling professional bookings with ease.',
-        tech: ['React', 'Vite', 'Clerk auth','Tailwind/CSS', 'Vercel and render hosting', 'modern JavaScript','mongodb'],
-        link: 'https://cinema-plus-delta.vercel.app/',
-        image: Cinemaplus
+        title: 'Chat App',
+        summary: 'A fully featured real time chat application with bidirectional communication between clients with advanced chat features.',
+        tech: ['React','Tailwind/CSS', 'Express', 'Socket.io','MongoDb'],
+        link: 'https://realtimesocketiochat.netlify.app/',
+        image: Chatapp
     },
     {
         id: 4,
-        title: 'Heavenly point of sale',
-        login: 'username:demo password:demo',
-        summary: ' Heavenly Point of Sale is a comprehensive full-stack application designed to streamline retail operations, featuring user authentication, product management, sales tracking, to enhance business efficiency.',
-        tech: ['React', 'Vite', ,'Tailwind/CSS', 'Vercel and render hosting', 'modern JavaScript','mongodb'],
-        link: 'https://heavenly-pos-1.vercel.app/',
-        image: heavenly
+        title: 'GOLDEN FITNESS',
+        // login: 'username:demo password:demo',
+        summary: ' A modern full-stack fitness platform built with the MERN stack. Designed to help users create personalized workout routines, plan budget-friendly diets, and interact within a growing fitness community.',
+        tech: ['React', 'Tailwind/CSS', 'Express.js', 'MongoDb','Node.js', 'Socket.io'],
+        link: '#',
+        image: Gymplanner
     },
 ]
 
