@@ -11,19 +11,21 @@ export default function App() {
   return (
     /* 1. Changed bg-black to bg-background and text-white to text-foreground */
     <div className="relative min-h-screen w-full overflow-x-hidden bg-background text-foreground font-inter selection:bg-cyan-500 selection:text-black scroll-smooth transition-colors duration-300">
-      
+
       {/* --- BACKGROUND LAYER --- */}
       <div className="fixed inset-0 z-0 w-full h-full">
-        <Squares 
-          direction="diagonal"
-          speed={0.5}
-          squareSize={40}
-          /* 2. These might need manual logic or CSS variables to change, 
-             but for now, we'll keep them subtle */
-          borderColor="var(--border)" 
-          hoverFillColor="var(--accent)"
-        />
-        
+        <div className="w-full h-full opacity-10">
+          <Squares
+            direction="diagonal"
+            speed={0.5}
+            squareSize={40}
+            /* 2. These might need manual logic or CSS variables to change, 
+               but for now, we'll keep them subtle */
+            borderColor="var(--border)"
+            hoverFillColor="var(--accent)"
+          />
+        </div>
+
         {/* 3. Changed from-black to from-background to match the theme flip */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background pointer-events-none"></div>
       </div>
@@ -31,7 +33,7 @@ export default function App() {
       {/* --- CONTENT LAYER --- */}
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
-        
+
         <main className="container mx-auto px-6 w-full max-w-[100vw] overflow-hidden">
           <section id="home" className="w-full min-h-screen flex flex-col justify-start md:justify-center pt-32 md:pt-20">
             <Home />
@@ -49,7 +51,7 @@ export default function App() {
             <Contact />
           </section>
         </main>
-        
+
         <Footer />
       </div>
     </div>
