@@ -51,10 +51,10 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex gap-4">
-          <a href="#projects" className="px-6 py-3 bg-[var(--brand)] text-white rounded font-semibold hover:opacity-90 transition">
+          <a href="#projects" className="px-6 py-3 bg-[var(--brand)] text-white rounded font-semibold hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all duration-300">
             See Projects
           </a>
-          <a href="#contact" className="px-6 py-3 border border-gray-700 rounded text-gray-200 hover:bg-white/5 transition">
+          <a href="#contact" className="px-6 py-3 border border-foreground/50 text-foreground rounded hover:scale-105 hover:border-foreground hover:shadow-[0_0_20px_currentColor] hover:bg-foreground/5 transition-all duration-300">
             Contact
           </a>
         </div>
