@@ -21,18 +21,18 @@ const logoData = [
 export default function Home() {
   return (
     <section className="w-full max-w-full overflow-hidden px-4 md:px-6 mx-auto pb-20pt-16 md:pt-0">
-      <motion.div 
-        initial={{ opacity: 0, y: 10 }} 
-        animate={{ opacity: 1, y: 0 }} 
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <h1 className="text-4xl md:text-6xl font-bold">Griffin Hongo</h1>
 
         {/* --- YOUR HERO SECTION (Kept exactly as you shared) --- */}
-        <div className="mt-3 flex flex-wrap items-center gap-2 text-xl md:text-2xl font-semibold text-gray-200">
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-xl md:text-2xl font-semibold text-foreground">
           <span>Expert in</span>
           <RotatingText
-            texts={['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js' , 'Bootstrap', 'Automation', 'Wordpress']}
+            texts={['MERN Stack', 'MongoDB', 'Express', 'React', 'Node.js', 'Bootstrap', 'Automation', 'Wordpress']}
             mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
             staggerFrom={"last"}
             initial={{ y: "100%" }}
@@ -46,8 +46,8 @@ export default function Home() {
         </div>
         {/* ----------------------------------------------------- */}
 
-        <p className="mt-4 text-gray-300 text-lg">
-          Software Engineer • Frontend & Full-Stack dev • Building clean, high-performance web apps.
+        <p className="mt-4 text-foreground text-lg">
+          Software Engineer • Full Stack developer • Automations Engineer• Building clean, high performance web apps.
         </p>
 
         <div className="mt-8 flex gap-4">
@@ -60,47 +60,47 @@ export default function Home() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-[rgba(255,255,255,0.02)] border border-white/5 rounded">
-            <div className="text-sm text-gray-400">Experience</div>
+          <div className="p-6 bg-card border border-border rounded">
+            <div className="text-sm text-foreground">Experience</div>
             <div className="text-xl font-semibold mt-2">2+ years</div>
           </div>
-          <div className="p-6 bg-[rgba(255,255,255,0.02)] border border-white/5 rounded">
-            <div className="text-sm text-gray-400">Open to</div>
+          <div className="p-6 bg-card border border-border rounded">
+            <div className="text-sm text-foreground">Open to</div>
             <div className="text-xl font-semibold mt-2">Full-time / Freelance</div>
           </div>
-          <div className="p-6 bg-[rgba(255,255,255,0.02)] border border-white/5 rounded">
-            <div className="text-sm text-gray-400">Location</div>
-            <div className="text-xl font-semibold mt-2">Nairobi, Kenya</div>
+          <div className="p-6 bg-card border border-border rounded">
+            <div className="text-sm text-foreground">Projects</div>
+            <div className="text-xl font-semibold mt-2">Over 10+</div>
           </div>
         </div>
 
         {/* --- FIXED LOGO WALL (Mobile Friendly) --- */}
         <div className="mt-12 md:mt-20">
-            <h3 className="text-xl font-semibold text-center mb-6 text-gray-400"> Technologies I use </h3>
-            
-            {/* Added height control: h-[120px] on mobile */}
-            <div className="h-[120px] md:h-[150px] w-full relative overflow-hidden">
-                <LogoWall
-                    logos={logoData}
-                    renderItem={(logo, index) => (
-                        <div key={index} className="flex flex-col items-center justify-center mx-4 gap-2">
-                            <img 
-                                src={logo.imgUrl} 
-                                alt={logo.altText} 
-                                // Added size control: w-10 h-10 on mobile
-                                className="w-10 h-10 md:w-12 md:h-12 object-contain"
-                            />
-                            <span className="text-xs text-gray-500">{logo.altText}</span>
-                        </div>
-                    )}
-                    direction='left'
-                    pauseOnHover={true}
-                    size='clamp(2rem, 1rem + 10vmin, 3rem)' // Reduced clamp size
-                    duration='20s'
-                    bgColor='transparent'
-                    bgAccentColor='transparent'
-                />
-            </div>
+          <h3 className="text-xl font-semibold text-center mb-6 text-foreground"> Technologies I use </h3>
+
+          {/* Added height control: h-[120px] on mobile */}
+          <div className="h-[120px] md:h-[150px] w-full relative overflow-hidden">
+            <LogoWall
+              logos={logoData}
+              renderItem={(logo, index) => (
+                <div key={index} className="flex flex-col items-center justify-center mx-4 gap-2">
+                  <img
+                    src={logo.imgUrl}
+                    alt={logo.altText}
+                    // Added size control: w-10 h-10 on mobile
+                    className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                  />
+                  <span className="text-xs text-foreground">{logo.altText}</span>
+                </div>
+              )}
+              direction='left'
+              pauseOnHover={true}
+              size='clamp(2rem, 1rem + 10vmin, 3rem)' // Reduced clamp size
+              duration='20s'
+              bgColor='transparent'
+              bgAccentColor='transparent'
+            />
+          </div>
         </div>
         {/* ------------------------------------------ */}
 

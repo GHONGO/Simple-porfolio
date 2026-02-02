@@ -5,18 +5,17 @@ export default function About() {
     return (
         <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold">About Me</h2>
-            <p className="mt-4 text-gray-300">I’m a passionate Software Engineer focused on building clean, scalable, and user-centered digital experiences. I enjoy turning ideas into fully functional applications—whether it’s a smooth frontend interface, a fast backend API, or a complete end-to-end product.</p>
+            <p className="mt-4 text-foreground">I’m a Software Engineer who believes that code is a tool for solving human problems. I specialize in building clean, scalable and user centered applications moving beyond 'just functional' to create experiences that are fast and intuitive.</p>
 
-<p className="mt-4 text-gray-300">Over the years, I’ve worked with modern technologies like React, Node.js, Express, MongoDB, and TailwindCSS, constantly pushing myself to learn, improve, and ship high-quality work. I love solving real problems, automating processes, and creating tools that make life easier for users.</p>
+            <p className="mt-4 text-foreground">With a core stack of React, Node.js, and MongoDB, I’ve spent the last few years refining my ability to architect end to end products. Whether I’m optimizing a backend API for speed or polishing a responsive interface, my goal is always the same: shipping high quality work that makes life easier for the end user.</p>
 
-<p className="mt-4 text-gray-300">When I’m not coding, I’m usually exploring new tech, designing UI concepts, or refining my existing projects. My goal is simple:
-build impactful software and keep leveling up every day.
+            <p className="mt-4 text-foreground">When I’m not at my desk, I’m exploring emerging tech or refining my UI/UX concepts. I don't just build software; I build solutions that level up every day.
 
-    </p>
+            </p>
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-[rgba(255,255,255,0.02)] p-4 rounded">
+                <div className="bg-card border border-border p-4 rounded">
                     <h4 className="font-semibold">Skills</h4>
-                    <ul className="mt-2 text-gray-300 space-y-1">
+                    <ul className="mt-2 text-foreground space-y-1">
                         <li>React </li>
                         <li>Tailwind • Bootstrap</li>
                         <li>Node.js • Express</li>
@@ -26,14 +25,16 @@ build impactful software and keep leveling up every day.
                         <li>Testing</li>
                         <li>Version Control</li>
                         <li>Automations</li>
+                        <li>SEO</li>
                     </ul>
                 </div>
-                <div className="bg-[rgba(255,255,255,0.02)] p-4 rounded">
+                <div className="bg-card border border-border p-4 rounded">
                     <h4 className="font-semibold">Tools</h4>
-                    <ul className="mt-2 text-gray-300 space-y-1">
+                    <ul className="mt-2 text-foreground space-y-1">
                         <li>N8N</li>
-                        <li>Git • GitHub</li>
+                        <li>Git & GitHub</li>
                         <li>Postman</li>
+                        <li>Wordpress</li>
                     </ul>
                 </div>
             </div>
