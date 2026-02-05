@@ -54,7 +54,7 @@ export default function Home() {
           <a href="#projects" className="px-6 py-3 bg-[var(--brand)] text-blue-500 rounded font-semibold hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all duration-300">
             See Projects
           </a>
-          <a href="#contact" className="px-6 py-3 border-2 border-foreground/50 text-foreground rounded hover:scale-105 hover:border-foreground hover:shadow-[0_0_20px_currentColor] hover:bg-foreground/5 transition-all duration-300">
+          <a href="#contact" className="px-6 py-3 border-2 border-foreground/70 text-foreground rounded hover:scale-105 hover:border-foreground hover:shadow-[0_0_20px_currentColor] hover:bg-foreground/5 transition-all duration-300">
             Contact
           </a>
         </div>
