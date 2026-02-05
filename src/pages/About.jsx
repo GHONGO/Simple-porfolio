@@ -5,13 +5,13 @@ export default function About() {
     return (
         <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold">About Me</h2>
-            <p className="mt-4 text-foreground">I’m a Software Engineer who believes that code is a tool for solving human problems. I specialize in building clean, scalable and user centered applications moving beyond 'just functional' to create experiences that are fast and intuitive.</p>
+            <p className="mt-4 text-foreground">I’m a software engineer who treats code as a tool for solving real human problems. I focus on building products that feel fast, intuitive and effortless to use, not just functional, but thoughtfully designed.</p>
 
-            <p className="mt-4 text-foreground">With a core stack of React, Node.js, and MongoDB, I’ve spent the last few years refining my ability to architect end to end products. Whether I’m optimizing a backend API for speed or polishing a responsive interface, my goal is always the same: shipping high quality work that makes life easier for the end user.</p>
+            <p className="mt-4 text-foreground">I specialize in creating clean, scalable, user centered applications using React, Node.js, and MongoDB. With hands on experience delivering end to end features, I’m comfortable moving from backend APIs to polished, responsive interfaces, always with performance and usability in mind.</p>
 
-            <p className="mt-4 text-foreground">When I’m not at my desk, I’m exploring emerging tech or refining my UI/UX concepts. I don't just build software; I build solutions that level up every day.
-
-            </p>
+            <p className="mt-4 text-foreground">I care deeply about quality, clear architecture, readable code and experiences that simply feel right to the user. Whether I’m optimizing an API or refining a UI interaction, my goal is the same: ship reliable software that genuinely makes life easier.
+When I’m not coding, I’m exploring emerging technologies and sharpening my UI/UX instincts. I don’t just build software, I build solutions designed to level up everyday experiences.</p>
+            
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-card border border-border p-4 rounded">
                     <h4 className="font-semibold">Skills</h4>
