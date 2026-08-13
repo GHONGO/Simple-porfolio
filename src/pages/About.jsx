@@ -15,8 +15,8 @@ When I’m not coding, I’m exploring emerging technologies and sharpening my U
             <div className="mt-6 bg-card border border-border rounded-lg p-6">
                 <h4 className="font-semibold text-lg mb-6">Tech Skills</h4>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div className="md:border-r md:border-border md:pr-6">
                         <h5 className="text-sm font-semibold text-muted-foreground mb-4">Frontend</h5>
                         <div className="grid grid-cols-3 gap-5">
                             <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" label="React" />
@@ -25,7 +25,7 @@ When I’m not coding, I’m exploring emerging technologies and sharpening my U
                         </div>
                     </div>
 
-                    <div>
+                    <div className="md:border-r md:border-border md:pr-6">
                         <h5 className="text-sm font-semibold text-muted-foreground mb-4">Backend</h5>
                         <div className="grid grid-cols-3 gap-5">
                             <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" label="Node.js" />
@@ -35,7 +35,7 @@ When I’m not coding, I’m exploring emerging technologies and sharpening my U
                         </div>
                     </div>
 
-                    <div>
+                    <div className="md:border-r md:border-border md:pr-6">
                         <h5 className="text-sm font-semibold text-muted-foreground mb-4">Tools</h5>
                         <div className="grid grid-cols-3 gap-5">
                             <SkillIcon src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg" label="n8n" />
@@ -44,14 +44,25 @@ When I’m not coding, I’m exploring emerging technologies and sharpening my U
                             <SkillIcon src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/wordpress.svg" label="Wordpress" />
                         </div>
                     </div>
+
+                    <div>
+                        <h5 className="text-sm font-semibold text-muted-foreground mb-4">Testing</h5>
+                        <div className="grid grid-cols-3 gap-5">
+                            <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" label="Jest" />
+                            <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg" label="Cypress" />
+                        </div>
+                    </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-border flex flex-wrap gap-2">
-                    {['APIs', 'Testing', 'Version Control', 'Automations', 'SEO'].map((tag) => (
-                        <span key={tag} className="text-xs px-3 py-1 rounded-full bg-secondary text-foreground">
-                            {tag}
-                        </span>
-                    ))}
+                <div className="mt-8 pt-6 border-t border-border">
+                    <h5 className="text-sm font-semibold text-muted-foreground mb-3">Practices</h5>
+                    <div className="flex flex-wrap gap-2">
+                        {['REST APIs', 'SEO'].map((tag) => (
+                            <span key={tag} className="text-xs px-3 py-1 rounded-full bg-secondary text-foreground">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
                 </div>
             </div>
         </motion.section>
