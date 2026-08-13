@@ -43,8 +43,20 @@ export default function Navbar() {
 
                 {/* Logo Section */}
                 <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">
-                        🏉
+                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text
+                                x="12"
+                                y="17"
+                                textAnchor="middle"
+                                fontSize="12"
+                                fontWeight="700"
+                                fontFamily="Inter, sans-serif"
+                                fill="currentColor"
+                            >
+                                GH
+                            </text>
+                        </svg>
                     </div>
                     <div>
                         <a href="#home" className="text-foreground font-bold block leading-tight">Griffin Hongo</a>
