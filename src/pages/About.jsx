@@ -29,7 +29,7 @@ When I’m not coding, I’m exploring emerging technologies and sharpening my U
                         <h5 className="text-sm font-semibold text-muted-foreground mb-4">Backend</h5>
                         <div className="grid grid-cols-3 gap-5">
                             <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" label="Node.js" />
-                            <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" label="Express" />
+                            <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" label="Express" />
                             <SkillIcon src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" label="MongoDB" />
                             <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" label="SQL" />
                         </div>
@@ -72,7 +72,9 @@ When I’m not coding, I’m exploring emerging technologies and sharpening my U
 function SkillIcon({ src, label }) {
     return (
         <div className="flex flex-col items-center gap-2">
-            <img src={src} alt={label} className="w-10 h-10 object-contain" />
+            <div className="w-11 h-11 rounded-lg bg-white flex items-center justify-center p-2 shadow-sm">
+                <img src={src} alt={label} className="w-full h-full object-contain" />
+            </div>
             <span className="text-xs text-foreground text-center">{label}</span>
         </div>
     )
