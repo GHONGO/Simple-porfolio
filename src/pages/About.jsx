@@ -12,32 +12,57 @@ export default function About() {
             <p className="mt-4 text-foreground">I care deeply about quality, clear architecture, readable code and experiences that simply feel right to the user. Whether I’m optimizing an API or refining a UI interaction, my goal is the same: ship reliable software that genuinely makes life easier.
 When I’m not coding, I’m exploring emerging technologies and sharpening my UI/UX instincts. I don’t just build software, I build solutions designed to level up everyday experiences.</p>
             
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-card border border-border p-4 rounded">
-                    <h4 className="font-semibold">Skills</h4>
-                    <ul className="mt-2 text-foreground space-y-1">
-                        <li>React </li>
-                        <li>Tailwind • Bootstrap</li>
-                        <li>Node.js • Express</li>
-                        <li>MongoDB</li>
-                        <li>SQL</li>
-                        <li>APIs</li>
-                        <li>Testing</li>
-                        <li>Version Control</li>
-                        <li>Automations</li>
-                        <li>SEO</li>
-                    </ul>
+            <div className="mt-6 bg-card border border-border rounded-lg p-6">
+                <h4 className="font-semibold text-lg mb-6">Tech Skills</h4>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h5 className="text-sm font-semibold text-muted-foreground mb-4">Frontend</h5>
+                        <div className="grid grid-cols-3 gap-5">
+                            <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" label="React" />
+                            <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" label="Tailwind" />
+                            <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" label="Bootstrap" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 className="text-sm font-semibold text-muted-foreground mb-4">Backend</h5>
+                        <div className="grid grid-cols-3 gap-5">
+                            <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" label="Node.js" />
+                            <SkillIcon src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" label="Express" />
+                            <SkillIcon src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" label="MongoDB" />
+                            <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" label="SQL" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 className="text-sm font-semibold text-muted-foreground mb-4">Tools</h5>
+                        <div className="grid grid-cols-3 gap-5">
+                            <SkillIcon src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/n8n.svg" label="n8n" />
+                            <SkillIcon src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" label="Git" />
+                            <SkillIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" label="Postman" />
+                            <SkillIcon src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/wordpress.svg" label="Wordpress" />
+                        </div>
+                    </div>
                 </div>
-                <div className="bg-card border border-border p-4 rounded">
-                    <h4 className="font-semibold">Tools</h4>
-                    <ul className="mt-2 text-foreground space-y-1">
-                        <li>N8N</li>
-                        <li>Git & GitHub</li>
-                        <li>Postman</li>
-                        <li>Wordpress</li>
-                    </ul>
+
+                <div className="mt-8 pt-6 border-t border-border flex flex-wrap gap-2">
+                    {['APIs', 'Testing', 'Version Control', 'Automations', 'SEO'].map((tag) => (
+                        <span key={tag} className="text-xs px-3 py-1 rounded-full bg-secondary text-foreground">
+                            {tag}
+                        </span>
+                    ))}
                 </div>
             </div>
         </motion.section>
+    )
+}
+
+function SkillIcon({ src, label }) {
+    return (
+        <div className="flex flex-col items-center gap-2">
+            <img src={src} alt={label} className="w-10 h-10 object-contain" />
+            <span className="text-xs text-foreground text-center">{label}</span>
+        </div>
     )
 }
