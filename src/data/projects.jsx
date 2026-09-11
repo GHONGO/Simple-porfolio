@@ -39,7 +39,7 @@ const projects = [
     },
     {
         id: 5,
-        title: 'GOLDEN FITNESS',
+        title: 'GOLDEN FITNESS (Coming Soon)',
         summary: 'A modern full-stack fitness platform built with the MERN stack. Designed to help users create personalized workout routines, plan budget-friendly diets, and interact within a growing fitness community.',
         tech: ['React', 'Tailwind/CSS', 'Express.js', 'MongoDb','Node.js', 'Socket.io'],
         link: '#',
