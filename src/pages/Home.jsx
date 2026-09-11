@@ -47,7 +47,7 @@ export default function Home() {
         {/* ----------------------------------------------------- */}
 
         <p className="mt-4 text-foreground text-lg">
-          Software Engineer • Full Stack developer • Automations Engineer• Building clean, high performance web apps.
+          Software Engineer • Full Stack developer • Automations Engineer • Building clean, high performance web apps.
         </p>
 
         <div className="mt-8 flex gap-4">
