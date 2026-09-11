@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const links = [
     { href: '#home', label: 'Home' },
@@ -59,7 +60,7 @@ export default function Navbar() {
                         </svg>
                     </div>
                     <div>
-                        <a href="#home" className="text-foreground font-bold block leading-tight">Griffin Hongo</a>
+                        <Link to="/#home" className="text-foreground font-bold block leading-tight">Griffin Hongo</Link>
                         <span className="text-xs text-muted-foreground">Software Engineer</span>
                     </div>
                 </div>
@@ -67,13 +68,13 @@ export default function Navbar() {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-6 items-center">
                     {links.map(l => (
-                        <a
+                        <Link
                             key={l.href}
-                            href={l.href}
+                            to={`/${l.href}`}
                             className="text-sm text-muted-foreground hover:text-foreground hover:font-semibold transition-colors cursor-pointer"
                         >
                             {l.label}
-                        </a>
+                        </Link>
                     ))}
 
                     {/* Theme Toggle Icon */}
@@ -134,14 +135,14 @@ function MobileMenu({ links, cvUrl, toggleTheme, isDark }) {
             {open && (
                 <div className="absolute right-0 mt-2 w-44 bg-card border border-border rounded shadow-lg p-3 space-y-2">
                     {links.map(l => (
-                        <a
+                        <Link
                             key={l.href}
-                            href={l.href}
+                            to={`/${l.href}`}
                             onClick={() => setOpen(false)}
                             className="block text-foreground hover:text-primary text-sm cursor-pointer"
                         >
                             {l.label}
-                        </a>
+                        </Link>
                     ))}
 
                     {/* Mobile Theme Toggle */}
