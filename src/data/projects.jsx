@@ -2,6 +2,7 @@ import WasteMap from '../assets/Wastemap.png';
 import NGO from '../assets/NGO.png';
 import Chatapp from '../assets/Chatapp.png';
 import Gymplanner from '../assets/Gymplanner.png';
+import LIB from '../assets/LIB.png';
 
 const projects = [
     {
@@ -43,7 +44,7 @@ const projects = [
         tech: ['React', 'Tailwind/CSS', 'Express.js', 'MongoDb','Node.js', 'Socket.io'],
         link: '#',
         image: Gymplanner
-    },
+    }
 ]
 
 export default projects
