@@ -13,12 +13,12 @@ const projects = [
         image: NGO  
     },           
      {
-    id: 2,
-    title: 'Laser Insurance Brokers',
-    summary: 'Updated the Laser Insurance Brokers corporate website by integrating dedicated Marine Insurance and Engineering & Construction Insurance sections, improving product visibility, accessibility and the overall digital presence.',
-    tech: ['WordPress'],
-    link: 'https://lib-insurance.co.ke/marine-insurance-solutions/',
-    image: LIB
+        id: 2,
+        title: 'Laser Insurance Brokers',
+        summary: 'Updated the Laser Insurance Brokers corporate website by integrating dedicated Marine Insurance and Engineering & Construction Insurance sections, improving product visibility, accessibility and the overall digital presence.',
+        tech: ['WordPress'],
+        link: 'https://lib-insurance.co.ke/marine-insurance-solutions/',
+        image: LIB
     },
     {
         id: 3,
@@ -43,7 +43,7 @@ const projects = [
         tech: ['React', 'Tailwind/CSS', 'Express.js', 'MongoDb','Node.js', 'Socket.io'],
         link: '#',
         image: Gymplanner
-    }
+    },
 ]
 
 export default projects
