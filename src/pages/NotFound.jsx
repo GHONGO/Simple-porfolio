@@ -60,18 +60,26 @@ export default function NotFound() {
             />
           </div>
 
+          <p className="mt-4 text-xs text-muted-foreground">
+            Try typing a command above, or use a shortcut below.
+          </p>
+
           {/* Plain, unconditional escape hatch — works with no
               understanding of the terminal or the map. */}
-          <nav aria-label="Quick navigation" className="mt-6 flex flex-wrap gap-3">
-            {Object.entries(NOT_FOUND_ROUTES).map(([key, route]) => (
-              <Link
-                key={key}
-                to={route.path}
-                className="px-4 py-2 rounded border border-border text-sm font-medium text-foreground hover:bg-secondary hover:border-foreground/30 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
-              >
-                {route.label}
-              </Link>
-            ))}
+          <nav aria-label="Quick navigation" className="mt-3 flex flex-wrap gap-3">
+            {Object.entries(NOT_FOUND_ROUTES).map(([key, route]) => {
+              const Icon = route.icon
+              return (
+                <Link
+                  key={key}
+                  to={route.path}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded border border-border bg-card text-sm font-medium text-foreground hover:bg-secondary hover:border-foreground/30 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2"
+                >
+                  <Icon className={`w-4 h-4 ${route.colorClass}`} aria-hidden="true" />
+                  {route.label}
+                </Link>
+              )
+            })}
           </nav>
         </motion.div>
 
@@ -85,6 +93,9 @@ export default function NotFound() {
             Where you can go
           </h2>
           <NotFoundMap goTo={goTo} />
+          <p className="mt-4 text-xs text-muted-foreground">
+            Tip: click a marker to jump straight there.
+          </p>
         </motion.div>
       </div>
     </section>
