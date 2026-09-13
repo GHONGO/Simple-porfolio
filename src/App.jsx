@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -9,45 +8,13 @@ import Contact from './pages/Contact'
 import Squares from './components/Squares'
 import NotFound from './pages/NotFound'
 
-// Renders the existing single-page sections and scrolls to the requested
-// in-page anchor (e.g. /#projects) after a client-side route change.
-// This is what makes "Navigating to /#projects..." from the 404 page
-// actually land on the Projects section instead of just the top of Home.
-function MainSections() {
-  const location = useLocation()
-
-  useEffect(() => {
-    if (!location.hash) return
-    const target = document.querySelector(location.hash)
-    if (!target) return
-    const frame = requestAnimationFrame(() => {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
-    return () => cancelAnimationFrame(frame)
-  }, [location.hash])
-
-  return (
-    <>
-      <section id="home" className="w-full min-h-screen flex flex-col justify-start md:justify-center pt-32 md:pt-20">
-        <Home />
-      </section>
-
-      <section id="about" className="min-h-screen flex items-center justify-center py-12 md:py-20">
-        <About />
-      </section>
-
-      <section id="projects" className="min-h-screen py-12 md:py-20">
-        <Projects />
-      </section>
-
-      <section id="contact" className="min-h-[80vh] flex items-center justify-center py-12 md:py-20">
-        <Contact />
-      </section>
-    </>
-  )
-}
-
 export default function App() {
+  const pathname = window.location.pathname
+
+  if (pathname !== '/' && pathname !== '/index.html') {
+    return <NotFound />
+  }
+
   return (
     /* 1. Changed bg-black to bg-background and text-white to text-foreground */
     <div className="relative min-h-screen w-full overflow-x-hidden bg-background text-foreground font-inter selection:bg-cyan-500 selection:text-black scroll-smooth transition-colors duration-300">
@@ -75,10 +42,21 @@ export default function App() {
         <Navbar />
 
         <main className="container mx-auto px-6 w-full max-w-[100vw] overflow-hidden">
-          <Routes>
-            <Route path="/" element={<MainSections />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <section id="home" className="w-full min-h-screen flex flex-col justify-start md:justify-center pt-32 md:pt-20">
+            <Home />
+          </section>
+
+          <section id="about" className="min-h-screen flex items-center justify-center py-12 md:py-20">
+            <About />
+          </section>
+
+          <section id="projects" className="min-h-screen py-12 md:py-20">
+            <Projects />
+          </section>
+
+          <section id="contact" className="min-h-[80vh] flex items-center justify-center py-12 md:py-20">
+            <Contact />
+          </section>
         </main>
 
         <Footer />

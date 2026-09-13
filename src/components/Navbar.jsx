@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 
 const links = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/#home', label: 'Home' },
+    { href: '/#about', label: 'About' },
+    { href: '/#projects', label: 'Projects' },
+    { href: '/#contact', label: 'Contact' },
     // Removed 'Switch Theme' from here to handle it separately with icons
 ]
 
-export default function Navbar() {
+export default function Navbar({ overlay = false }) {
     const cvUrl = "/Griffin%20Hongo%27s%20RESUME.pdf";
     const [isDark, setIsDark] = useState(false);
 
@@ -38,7 +37,7 @@ export default function Navbar() {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="fixed w-full z-50 bg-background/90 border-b border-border backdrop-blur-md"
+            className={`fixed w-full z-50 border-b border-border backdrop-blur-md transition-colors duration-300 ${overlay ? 'bg-background/55' : 'bg-background/90'}`}
         >
             <div className="container mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -60,7 +59,7 @@ export default function Navbar() {
                         </svg>
                     </div>
                     <div>
-                        <Link to="/#home" className="text-foreground font-bold block leading-tight">Griffin Hongo</Link>
+                        <a href="/#home" className="text-foreground font-bold block leading-tight">Griffin Hongo</a>
                         <span className="text-xs text-muted-foreground">Software Engineer</span>
                     </div>
                 </div>
@@ -68,13 +67,14 @@ export default function Navbar() {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-6 items-center">
                     {links.map(l => (
-                        <Link
+                        <a
                             key={l.href}
-                            to={`/${l.href}`}
-                            className="text-sm text-muted-foreground hover:text-foreground hover:font-semibold transition-colors cursor-pointer"
+                            href={l.href}
+                            className="group relative py-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
                         >
-                            {l.label}
-                        </Link>
+                            <span>{l.label}</span>
+                            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-foreground transition-all duration-300 group-hover:w-full rounded-full" />
+                        </a>
                     ))}
 
                     {/* Theme Toggle Icon */}
@@ -135,14 +135,15 @@ function MobileMenu({ links, cvUrl, toggleTheme, isDark }) {
             {open && (
                 <div className="absolute right-0 mt-2 w-44 bg-card border border-border rounded shadow-lg p-3 space-y-2">
                     {links.map(l => (
-                        <Link
+                        <a
                             key={l.href}
-                            to={`/${l.href}`}
+                            href={l.href}
                             onClick={() => setOpen(false)}
-                            className="block text-foreground hover:text-primary text-sm cursor-pointer"
+                            className="group relative block w-fit py-1 text-foreground text-sm font-medium cursor-pointer"
                         >
-                            {l.label}
-                        </Link>
+                            <span>{l.label}</span>
+                            <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-foreground transition-all duration-300 group-hover:w-full rounded-full" />
+                        </a>
                     ))}
 
                     {/* Mobile Theme Toggle */}
