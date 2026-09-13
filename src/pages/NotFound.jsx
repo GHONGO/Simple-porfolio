@@ -338,7 +338,12 @@ function Terminal({ requestedPath, input, setInput, inputRef, history, onSubmit 
 }
 
 function SystemStatus({ activeDestination, onSelect }) {
-  const [isClosed, setIsClosed] = useState(false)
+  const [isClosed, setIsClosed] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 640
+    }
+    return false
+  })
 
   if (isClosed) {
     return (
