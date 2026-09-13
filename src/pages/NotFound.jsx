@@ -173,7 +173,7 @@ export default function NotFound() {
 
             <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
               <span className="font-semibold uppercase tracking-[0.14em] text-emerald-500">TIP</span>
-              <span className="text-emerald-600 dark:text-emerald-400">You can also click the map markers.</span>
+              <span className="text-emerald-600 dark:text-emerald-400">You can also use SYSTEM STATUS.</span>
             </div>
           </section>
 
@@ -290,7 +290,7 @@ function Terminal({ requestedPath, input, setInput, inputRef, history, onSubmit 
         <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
         <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
         <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-        <span className="ml-2 tracking-wide">PORTFOLIO TERMINAL — 404</span>
+        <span className="ml-2 tracking-wide">PORTFOLIO TERMINAL: 404</span>
       </div>
 
       <div className="min-h-[240px] px-4 py-4 font-mono text-xs leading-6 sm:min-h-[260px] sm:px-5 sm:py-5 sm:text-sm">
@@ -532,9 +532,8 @@ function MapBackground({ activeDestination, onSelect }) {
             key={destination.id}
             type="button"
             onClick={(e) => handleMarkerClick(e, destination)}
-            className={`pointer-events-auto absolute -translate-x-1/2 -translate-y-1/2 text-left transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-              activeDestination === destination.id ? 'scale-105' : ''
-            }`}
+            className={`pointer-events-auto absolute -translate-x-1/2 -translate-y-1/2 text-left transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeDestination === destination.id ? 'scale-105' : ''
+              }`}
             style={{ left: `${destination.x}%`, top: `${destination.y}%` }}
             aria-label={`Go to ${destination.label}`}
           >
