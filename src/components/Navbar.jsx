@@ -104,13 +104,7 @@ export default function Navbar({ overlay = false }) {
                         )}
                     </button>
 
-                    <a
-                        href={cvUrl}
-                        download="Griffin_Hongo's_Resume.pdf"
-                        className="ml-4 inline-block px-4 py-2 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
-                    >
-                        Download CV
-                    </a>
+                    <DownloadCVButton cvUrl={cvUrl} className="ml-4 bg-primary text-primary-foreground font-semibold text-sm rounded-md shadow-sm hover:opacity-95" />
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -174,16 +168,105 @@ function MobileMenu({ links, cvUrl, toggleTheme, isDark }) {
                         )}
                     </button>
 
-                    <a
-                        href={cvUrl}
-                        download="Griffin_Hongo's_Resume.pdf"
-                        onClick={() => setOpen(false)}
-                        className="block mt-2 px-3 py-2 bg-primary text-primary-foreground rounded text-center text-sm font-bold"
-                    >
-                        Download CV
-                    </a>
+                    <DownloadCVButton
+                        cvUrl={cvUrl}
+                        className="w-full mt-2 bg-primary text-primary-foreground font-bold text-sm rounded shadow-sm"
+                        onComplete={() => setOpen(false)}
+                    />
                 </div>
             )}
         </div>
+    )
+}
+
+function DownloadCVButton({ cvUrl, className = '', onComplete }) {
+    const [status, setStatus] = useState('idle') // 'idle' | 'downloading' | 'completed'
+    const [progress, setProgress] = useState(0)
+
+    const handleDownload = (e) => {
+        if (e) e.preventDefault()
+        if (status !== 'idle') return
+
+        setStatus('downloading')
+        setProgress(0)
+
+        const duration = 1800 // 1.8 seconds
+        const startTime = performance.now()
+
+        const animateProgress = (currentTime) => {
+            const elapsed = currentTime - startTime
+            const currentProgress = Math.min(Math.round((elapsed / duration) * 100), 100)
+            setProgress(currentProgress)
+
+            if (currentProgress < 100) {
+                requestAnimationFrame(animateProgress)
+            } else {
+                setStatus('completed')
+
+                // Trigger actual PDF file download
+                const link = document.createElement('a')
+                link.href = cvUrl
+                link.download = "Griffin_Hongo's_Resume.pdf"
+                document.body.appendChild(link)
+                link.click()
+                document.body.removeChild(link)
+
+                if (onComplete) {
+                    setTimeout(() => onComplete(), 1000)
+                }
+
+                // Reset back to idle state after 2.5s
+                setTimeout(() => {
+                    setStatus('idle')
+                    setProgress(0)
+                }, 2500)
+            }
+        }
+
+        requestAnimationFrame(animateProgress)
+    }
+
+    return (
+        <button
+            type="button"
+            onClick={handleDownload}
+            disabled={status === 'downloading'}
+            className={`relative overflow-hidden transition-all duration-200 cursor-pointer focus:outline-none ${className}`}
+            title={status === 'completed' ? 'Resume Downloaded!' : 'Download Resume'}
+            aria-label="Download CV"
+        >
+            {/* Animated Progress Fill (Left-to-Right) */}
+            <span
+                className="absolute inset-y-0 left-0 bg-emerald-500/85 dark:bg-emerald-600/85 transition-all duration-75 ease-linear pointer-events-none"
+                style={{ width: `${progress}%` }}
+            />
+
+            {/* Label & Icons */}
+            <span className="relative z-10 flex items-center justify-center gap-1.5 px-4 py-2">
+                {status === 'idle' && (
+                    <>
+                        <svg className="w-4 h-4 text-primary-foreground" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        <span>Download CV</span>
+                    </>
+                )}
+
+                {status === 'downloading' && (
+                    <span className="font-mono text-xs font-semibold text-primary-foreground tracking-wide whitespace-nowrap">
+                        Downloading... {progress}%
+                    </span>
+                )}
+
+                {status === 'completed' && (
+                    <span className="flex items-center gap-1 text-xs font-bold text-white whitespace-nowrap">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Downloaded 100%</span>
+                    </span>
+                )}
+            </span>
+        </button>
     )
 }
